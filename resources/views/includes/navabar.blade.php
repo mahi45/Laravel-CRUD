@@ -1,7 +1,7 @@
  {{-- Navbar Starts --}}
  <div class="w-2/3 m-auto mt-4 navbar bg-base-100">
     <div class="flex-1">
-      <a class="text-xl font-bold">Laravel CRUD</a>
+      <a href="{{ route('home') }}" class="text-xl font-bold">Laravel CRUD</a>
     </div>
 
     <div class="hidden navbar-center lg:flex">

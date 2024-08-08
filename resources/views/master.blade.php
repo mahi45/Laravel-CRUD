@@ -13,7 +13,7 @@
    <div class="w-2/3 m-auto mt-4">
         <div>
             @if(session('status'))
-                <h1 class="p-2 bg-green-300 text-md">{{ session('status') }}</h1>
+                <h1 class="p-2 mb-3 bg-green-300 text-md">{{ session('status') }}</h1>
             @endif
         </div>
         @yield('content')

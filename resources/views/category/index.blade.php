@@ -9,7 +9,7 @@
         <div class="overflow-x-auto">
             <table class="table table-md">
               <thead>
-                <tr>
+                <tr class="">
                   <th class="text-lg text-black">SL</th>
                   <th class="text-lg text-black">Category Name</th>
                   <th class="text-lg text-black">Status</th>
@@ -32,8 +32,27 @@
                         @endif
                     </td>
                     <td>{{ $category->created_at }}</td>
-                    <td class="flex gap-5"><span><a href="{{ route('category.edit', ['category' => $category->id]) }}"><i class="fa-solid fa-pen-to-square"></i></a></span><span>
-                        <i class="fa-regular fa-trash-can"></i></span></td>
+                    <td class="flex gap-2">
+                        <span>
+                            <a href="{{ route('category.edit', ['category' => $category->id]) }}">
+                            <button type="submit" class="px-5 py-2 text-white bg-green-500 rounded-md"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </a>
+                        </span>
+                        <span>
+                            <a href="{{ route('category.show', ['category' => $category->id]) }}">
+                            <button type="submit" class="px-5 py-2 text-white bg-teal-500 rounded-md"><i class="fa-regular fa-eye"></i></button>
+                            </a>
+                        </span>
+                        <span>
+                            <form action="{{ route('category.destroy', ['category' => $category->id]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+
+                                <button type="submit" class="px-5 py-2 text-white bg-red-500 rounded-md"><i class="fa-regular fa-trash-can"></i></button>
+                            </form>
+                        </span>
+
+                    </td>
                     </tr>
                 @endforeach
               </tbody>

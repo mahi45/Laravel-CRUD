@@ -6,7 +6,7 @@ use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('master');
+    return view('home');
 });
 
 Route::get('/home', [PagesController::class, 'home'])->name('home');
